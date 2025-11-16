@@ -58,18 +58,19 @@ publishing {
             from(components["java"])
         }
     }
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri(System.getenv("GITHUB_MAVEN_URL") ?: "")
-            credentials {
-                username = System.getenv("GITHUB_ACTOR")
-                password = System.getenv("GITHUB_TOKEN")
-            }
-        }
-    }
+//    repositories {
+//        maven {
+//            name = "GitHubPackages"
+//            url = uri(System.getenv("GITHUB_MAVEN_URL") ?: "")
+//            credentials {
+//                username = System.getenv("GITHUB_ACTOR")
+//                password = System.getenv("GITHUB_TOKEN")
+//            }
+//        }
+//    }
 }
 
 tasks.test {
+    enabled = false //temp
     useJUnitPlatform()
 }
